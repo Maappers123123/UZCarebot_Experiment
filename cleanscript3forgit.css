@@ -365,7 +365,7 @@ background-color: #002f5f;
       color: white
     }
 
-.chatbot-screen button, .game-screen button, .back-btn button {
+.chatbot-screen button, .game-screen button, .back-btn {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
       margin: 0.5rem;
