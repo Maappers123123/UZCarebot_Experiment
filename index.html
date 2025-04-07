@@ -226,29 +226,52 @@
 
     <img src="uz-leuven-logo.png" alt="UZ Leuven Logo" class="uz-logo" />
   </div>
-  <df-messenger
-  project-id="prj-uzl-kuldigitinter-prd-375e"
-  agent-id="333f555a-90b9-459d-8898-0410bfdbaf6d"
-  language-code="nl"
-  max-query-length="-1">
-  <df-messenger-chat-bubble
-    chat-title="scenario UZ Carebot">
-  </df-messenger-chat-bubble>
-</df-messenger>
-<style>
-  df-messenger {
-    z-index: 999;
-    position: fixed;
-    --df-messenger-font-color: #000;
-    --df-messenger-font-family: Google Sans;
-    --df-messenger-chat-background: #f3f6fc;
-    --df-messenger-message-user-background: #d3e3fd;
-    --df-messenger-message-bot-background: #fff;
-    bottom: 16px;
-    right: 16px;
-  }
+<section id="chatbot-screen" class="chatbot-screen hidden">
+  <div class="container">
+    <df-messenger
+      project-id="prj-uzl-kuldigitinter-prd-375e"
+      agent-id="333f555a-90b9-459d-8898-0410bfdbaf6d"
+      language-code="nl"
+      max-query-length="-1">
+      <df-messenger-chat-bubble chat-title="scenario UZ Carebot"></df-messenger-chat-bubble>
+    </df-messenger>
+
+    <button onclick="goBackToIntro()" class="small-back-btn">&lt; Terug</button>
+  </div>
+</section>
+
 </style>
 
   <script src="cleanscript3scripts.js"></script>
+  <script>
+  window.addEventListener('df-response-received', function (event) {
+    const messages = event.detail.response.queryResult.fulfillmentMessages;
+
+    messages.forEach((msg) => {
+      const params = msg?.payload?.fields;
+      if (params && params.action?.stringValue === 'navigate') {
+        const targetId = params.target?.stringValue;
+        if (targetId) {
+          showCustomScreen(targetId);
+        }
+      }
+    });
+  });
+
+  function showCustomScreen(targetId) {
+    hideAllScreens();
+    const screen = document.getElementById(targetId);
+    if (screen) {
+      screen.classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function hideAllScreens() {
+    const screens = document.querySelectorAll("section");
+    screens.forEach((s) => s.classList.add("hidden"));
+  }
+</script>
+
 </body>
 </html>
