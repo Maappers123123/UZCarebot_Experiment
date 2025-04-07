@@ -6,32 +6,9 @@
   <title>UZ Leuven Wachtruimte App</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="cleanscript3forgit.css">
-</style>
   <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
 <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-<df-messenger
-  project-id="prj-uzl-kuldigitinter-prd-375e"
-  agent-id="333f555a-90b9-459d-8898-0410bfdbaf6d"
-  language-code="nl"
-  max-query-length="-1">
-  <df-messenger-chat-bubble
-    chat-title="scenario UZ Carebot">
-  </df-messenger-chat-bubble>
-</df-messenger>
-<style>
-  df-messenger {
-    z-index: 999;
-    position: fixed;
-    --df-messenger-font-color: #000;
-    --df-messenger-font-family: Google Sans;
-    --df-messenger-chat-background: #f3f6fc;
-    --df-messenger-message-user-background: #d3e3fd;
-    --df-messenger-message-bot-background: #fff;
-    bottom: 16px;
-    right: 16px;
-  }
 </style>
-
 </head>
 <body>
 <div class="container">
@@ -249,7 +226,28 @@
 
     <img src="uz-leuven-logo.png" alt="UZ Leuven Logo" class="uz-logo" />
   </div>
-
+  <df-messenger
+  project-id="prj-uzl-kuldigitinter-prd-375e"
+  agent-id="333f555a-90b9-459d-8898-0410bfdbaf6d"
+  language-code="nl"
+  max-query-length="-1">
+  <df-messenger-chat-bubble
+    chat-title="scenario UZ Carebot">
+  </df-messenger-chat-bubble>
+</df-messenger>
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    --df-messenger-font-color: #000;
+    --df-messenger-font-family: Google Sans;
+    --df-messenger-chat-background: #f3f6fc;
+    --df-messenger-message-user-background: #d3e3fd;
+    --df-messenger-message-bot-background: #fff;
+    bottom: 16px;
+    right: 16px;
+  }
+</style>
 
   <script src="cleanscript3scripts.js"></script>
 </body>
