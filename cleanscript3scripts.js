@@ -28,7 +28,8 @@
     }
 
 function openChatConversation() {
-  showOnlySection('chatbot-screen');
+  hideAllScreens();
+  document.getElementById('chatbot-df-screen').classList.remove('hidden');
 }
 
 function goBackToIntro() {
