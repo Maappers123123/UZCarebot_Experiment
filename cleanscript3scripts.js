@@ -267,3 +267,32 @@ function arenaSweep() {
       else if (event.key === 'q') playerRotate(-1);
       else if (event.key === 'w') playerRotate(1);
     });
+
+  window.addEventListener('df-response-received', function (event) {
+    const messages = event.detail.response.queryResult.fulfillmentMessages;
+
+    messages.forEach((msg) => {
+      const params = msg?.payload?.fields;
+      if (params && params.action?.stringValue === 'navigate') {
+        const targetId = params.target?.stringValue;
+        if (targetId) {
+          showCustomScreen(targetId);
+        }
+      }
+    });
+  });
+
+  function showCustomScreen(targetId) {
+    hideAllScreens();
+    const screen = document.getElementById(targetId);
+    if (screen) {
+      screen.classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function hideAllScreens() {
+    const screens = document.querySelectorAll("section");
+    screens.forEach((s) => s.classList.add("hidden"));
+  };
+
