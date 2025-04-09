@@ -296,3 +296,11 @@ function arenaSweep() {
     screens.forEach((s) => s.classList.add("hidden"));
   };
 
+window.addEventListener('df-messenger-loaded', () => {
+  const iframe = document.querySelector('df-messenger').shadowRoot.querySelector('iframe');
+  iframe.onload = () => {
+    iframe.contentWindow.scrollTo(0, iframe.contentWindow.document.body.scrollHeight);
+  };
+});
+
+
