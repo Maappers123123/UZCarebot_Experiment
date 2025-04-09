@@ -190,38 +190,42 @@
 </div>
     <button onclick="goBack()" class="back-btn">&lt; Terug</button>
   </div>
+
 </section>
-    <section class="game-screen hidden" id="tetris-screen">
-      <h2>TETRIS</h2>
-      <div class="tetris-layout">
-        <canvas id="tetris" width="240" height="400"></canvas>
-        <div class="tetris-info">
-          <div class="info-box">
-            <p><strong>NEXT:</strong></p>
-            <canvas id="next" width="80" height="80"></canvas>
-          </div>
-          <div class="info-box">
-            <p><strong>LEVEL:</strong></p>
-            <p id="level">01</p>
-          </div>
-          <button class="pause-btn" onclick="pauseGame()">PAUZE</button>
-        </div>
-         </div>
-<div id="tetris-controls" style="margin-top: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-  <button onclick="playerRotate(1)" style="background-color: #27BEFF; font-size: 2rem; font-weight: bold;">
-    ⟳
-  </button>
-  <div style="display: flex; gap: 1rem;">
-    <button onclick="playerMove(-1)" style="background-color: #27BEFF; font-size: 2rem; font-weight: bold;">←</button>
-    <button onclick="playerDrop()" style="background-color: #27BEFF; font-size: 2rem; font-weight: bold;">↓</button>
-    <button onclick="playerMove(1)" style="background-color: #27BEFF; font-size: 2rem; font-weight: bold;">→</button>
+<section class="game-screen hidden" id="tetris-screen">
+  <h2>TETRIS</h2>
+  <div class="tetris-layout">
+    <canvas id="tetris" width="240" height="400"></canvas>
+    <div class="tetris-info">
+      <div class="info-box">
+        <p><strong>NEXT:</strong></p>
+        <canvas id="next" width="80" height="80"></canvas>
+      </div>
+      <div class="info-box">
+        <p><strong>LEVEL:</strong></p>
+        <p id="level">01</p>
+      </div>
+      <button class="pause-btn" onclick="pauseGame()">PAUZE</button>
+    </div>
   </div>
-        </div>
-      <button onclick="resumeGame()" class="resume-btn hidden" id="resume-btn">Speel verder</button>
-<button onclick="goBack2()" class="back-btn">< Terug</button>
-</div>
-    </section>
-  
+
+  <div id="tetris-controls" style="margin-top: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+    <button onclick="playerRotate(1)" style="background-color: #27BEFF; font-size: 2rem; font-weight: bold;">
+      ⟳
+    </button>
+    <div style="display: flex; gap: 1rem;">
+      <button onclick="playerMove(-1)" style="background-color: #27BEFF; font-size: 2rem; font-weight: bold;">←</button>
+      <button onclick="playerDrop()" style="background-color: #27BEFF; font-size: 2rem; font-weight: bold;">↓</button>
+      <button onclick="playerMove(1)" style="background-color: #27BEFF; font-size: 2rem; font-weight: bold;">→</button>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+    <button onclick="resumeGame()" class="resume-btn hidden" id="resume-btn">Speel verder</button>
+    <button onclick="goBack2()" class="back-btn">< Terug</button>
+  </div>
+</section>
+
   <section id="chatbot-df-screen" class="chatbot-screen hidden">
   <div class="container">
     <df-messenger
