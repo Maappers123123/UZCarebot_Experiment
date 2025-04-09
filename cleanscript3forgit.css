@@ -22,14 +22,19 @@ main > section {
   padding: 1rem;
 }
 
-df-messenger {
-  all: unset;
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: 600px;
-  border: none;
-}
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    --df-messenger-font-color: #000;
+    --df-messenger-font-family: Roboto;
+    --df-messenger-chat-background: #DFF1FA;
+    --df-messenger-message-user-background: #D3EBF6;
+    --df-messenger-message-bot-background: #fff;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    width: 350px;
+  }
 
 #chatbot-df-screen {
   background-color: #eaf5fc;
