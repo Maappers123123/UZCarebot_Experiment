@@ -340,15 +340,6 @@ window.addEventListener('df-messenger-loaded', () => {
     sections.forEach(s => s.classList.add('hidden'));
     document.getElementById(id).classList.remove('hidden');
 
-    const nav = document.getElementById('bottom-nav');
-    const toggle = document.getElementById('nav-toggle');
-    if (id === 'video-screen' || id === 'game-screen' || id === 'tetris-screen') {
-      nav.classList.add('hidden');
-      toggle.classList.remove('hidden');
-    } else {
-      nav.classList.remove('hidden');
-      toggle.classList.add('hidden');
-    }
   }
 
 
