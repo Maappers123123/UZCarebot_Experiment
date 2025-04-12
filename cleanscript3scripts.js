@@ -334,6 +334,5 @@ window.addEventListener('df-messenger-loaded', () => {
     buttons.forEach(btn => btn.classList.remove('active'));
     target.classList.add('active');
   }
-}
 
 
