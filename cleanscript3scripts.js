@@ -19,10 +19,6 @@
       showOnlySection('game-screen');
     }
 
-    function showInfoScreen() {
-      showOnlySection('info-screen');
-    }
-
     function showChatbot() {
       showOnlySection('chatbot-intro-screen');
     }
