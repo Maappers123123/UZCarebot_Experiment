@@ -245,6 +245,30 @@
     <img src="uz-leuven-logo.png" alt="UZ Leuven Logo" class="uz-logo" />
   </div>
 
+  <nav class="bottom-nav" id="bottom-nav">
+  <button onclick="goHome()">
+    <img src="icon-home.svg" alt="Home">
+    <span>Home</span>
+  </button>
+  <button onclick="showOptions()">
+    <img src="icon-options.svg" alt="Ontspanning">
+    <span>Ontspanning</span>
+  </button>
+  <button onclick="showChatbot()">
+    <img src="icon-chat.svg" alt="Vraag">
+    <span>Vraag</span>
+  </button>
+  <button onclick="showInfoScreen()">
+    <img src="icon-info.svg" alt="Info">
+    <span>Info</span>
+  </button>
+</nav>
+
+<!-- Optional dropdown trigger -->
+<button id="nav-toggle" class="nav-toggle hidden" onclick="toggleBottomNav()">
+  ⌄
+</button>
+
   <script src="cleanscript3scripts.js"></script>
   <script>
   window.addEventListener('df-response-received', function (event) {
