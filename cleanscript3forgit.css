@@ -52,7 +52,7 @@ main > section {
     width: 24px;
     height: 24px;
     margin-bottom: 0.2rem;
-    filter: grayscale(100%) brightness(1.6);
+  filter: brightness(0) saturate(100%) invert(82%) sepia(3%) saturate(310%) hue-rotate(174deg) brightness(94%) contrast(86%);
   }
   .bottom-nav .nav-btn.active {
     color: #002f5f;
