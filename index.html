@@ -48,7 +48,7 @@
 <div class="container">
       <div class="tile-grid">
         <div class="tile">
-          <img src="icon-mindfulness.svg" alt="Mindfulness">
+          <img src="icon-mindfulness.svg" onclick="showMindfulness()"
           <p> Ontspan met mindfulness > </p>
         </div>
         <div class="tile" onclick="showChatbot()">
@@ -200,32 +200,26 @@
 </section>
 
   </main>
-
 <nav class="bottom-nav" id="bottom-nav">
-  <button onclick="showOptions(); setActiveNav(this);" class="nav-btn active">
+  <button onclick="showOptions(); setActiveNav(this);" class="nav-btn" id="nav-keuzescherm">
     <img src="icon-keuzescherm.svg" alt="Home">
     <span>keuzescherm</span>
-    <div class="underline"></div>
   </button>
-  <button onclick="showChatbot(); setActiveNav(this);" class="nav-btn">
+  <button onclick="showChatbot(); setActiveNav(this);" class="nav-btn" id="nav-vragen">
     <img src="icon-chat.svg" alt="Vragen">
     <span>vragen</span>
-    <div class="underline"></div>
   </button>
-  <button onclick="openRelaxation(); setActiveNav(this);" class="nav-btn">
+  <button onclick="showMindfulness(); setActiveNav(this);" class="nav-btn" id="nav-mindfulness">
     <img src="icon-mindfulness.svg" alt="Mindfulness">
     <span>mindfulness</span>
-    <div class="underline"></div>
   </button>
-  <button onclick="showVideoScreen(); setActiveNav(this);" class="nav-btn">
+  <button onclick="showVideoScreen(); setActiveNav(this);" class="nav-btn" id="nav-videos">
     <img src="icon-video.svg" alt="Video's">
     <span>video’s</span>
-    <div class="underline"></div>
   </button>
-  <button onclick="showGame(); setActiveNav(this);" class="nav-btn">
+  <button onclick="showGame(); setActiveNav(this);" class="nav-btn" id="nav-spelletjes">
     <img src="icon-game.svg" alt="Spelletjes">
     <span>spelletjes</span>
-    <div class="underline"></div>
   </button>
 </nav>
       
