@@ -23,6 +23,10 @@
       showOnlySection('chatbot-intro-screen');
     }
 
+    function showMindfulness() {
+      showOnlySection('meditatie-screen');
+    }
+
 function openChatConversation() {
   hideAllScreens();
   document.getElementById('chatbot-df-screen').classList.remove('hidden');
@@ -335,4 +339,31 @@ window.addEventListener('df-messenger-loaded', () => {
     target.classList.add('active');
   }
 
+  function showOnlySection(id) {
+    const sections = document.querySelectorAll('main > section');
+    sections.forEach(s => s.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+
+    const nav = document.getElementById('bottom-nav');
+    const toggle = document.getElementById('nav-toggle');
+    if (id === 'video-screen') {
+      setActiveNav(document.getElementById('nav-videos'));
+    } else if (id === 'game-screen' || id === 'tetris-screen') {
+      setActiveNav(document.getElementById('nav-spelletjes'));
+    } else if (id === 'meditatie-screen') {
+      setActiveNav(document.getElementById('nav-mindfulness'));
+    } else if (id === 'chatbot-intro-screen') {
+      setActiveNav(document.getElementById('nav-vragen'));
+    } else if (id === 'options-screen') {
+      setActiveNav(document.getElementById('nav-keuzescherm'));
+    }
+
+    if (id === 'video-screen' || id === 'game-screen' || id === 'tetris-screen') {
+      nav.classList.add('hidden');
+      if (toggle) toggle.classList.remove('hidden');
+    } else {
+      nav.classList.remove('hidden');
+      if (toggle) toggle.classList.add('hidden');
+    }
+  }
 
