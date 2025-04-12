@@ -334,12 +334,6 @@ window.addEventListener('df-messenger-loaded', () => {
     buttons.forEach(btn => btn.classList.remove('active'));
     target.classList.add('active');
   }
-
-  function showOnlySection(id) {
-    const sections = document.querySelectorAll('main > section');
-    sections.forEach(s => s.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
-
-  }
+}
 
 
