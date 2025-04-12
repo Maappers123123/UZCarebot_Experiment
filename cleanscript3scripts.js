@@ -301,22 +301,32 @@ window.addEventListener('df-messenger-loaded', () => {
   const bottomNav = document.getElementById("bottom-nav");
   const navToggle = document.getElementById("nav-toggle");
 
-  function showOnlySection(id) {
-    const sections = document.querySelectorAll('main > section');
-    sections.forEach(s => s.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
+  window.addEventListener('df-response-received', function (event) {
+    const messages = event.detail.response.queryResult.fulfillmentMessages;
 
-    if (id === 'video-screen' || id === 'game-screen' || id === 'tetris-screen') {
-      bottomNav.classList.add('hidden');
-      navToggle.classList.remove('hidden');
-    } else {
-      bottomNav.classList.remove('hidden');
-      navToggle.classList.add('hidden');
+    messages.forEach((msg) => {
+      const params = msg?.payload?.fields;
+      if (params && params.action?.stringValue === 'navigate') {
+        const targetId = params.target?.stringValue;
+        if (targetId) {
+          showCustomScreen(targetId);
+        }
+      }
+    });
+  });
+
+  function showCustomScreen(targetId) {
+    hideAllScreens();
+    const screen = document.getElementById(targetId);
+    if (screen) {
+      screen.classList.remove('hidden');
+      window.scrollTo(0, 0);
     }
   }
 
-  function toggleBottomNav() {
-    bottomNav.classList.toggle('hidden');
+  function hideAllScreens() {
+    const screens = document.querySelectorAll("section");
+    screens.forEach((s) => s.classList.add("hidden"));
   }
 
 
