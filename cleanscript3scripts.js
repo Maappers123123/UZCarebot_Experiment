@@ -302,5 +302,25 @@ window.addEventListener('df-messenger-loaded', () => {
     iframe.contentWindow.scrollTo(0, iframe.contentWindow.document.body.scrollHeight);
   };
 });
+  const bottomNav = document.getElementById("bottom-nav");
+  const navToggle = document.getElementById("nav-toggle");
+
+  function showOnlySection(id) {
+    const sections = document.querySelectorAll('main > section');
+    sections.forEach(s => s.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+
+    if (id === 'video-screen' || id === 'game-screen' || id === 'tetris-screen') {
+      bottomNav.classList.add('hidden');
+      navToggle.classList.remove('hidden');
+    } else {
+      bottomNav.classList.remove('hidden');
+      navToggle.classList.add('hidden');
+    }
+  }
+
+  function toggleBottomNav() {
+    bottomNav.classList.toggle('hidden');
+  }
 
 
