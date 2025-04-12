@@ -27,40 +27,49 @@ main > section {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: white;
+    background: #f6fbfe;
+    border-top: 1px solid #cce5ff;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-top: 1px solid #ccc;
-    z-index: 1000;
     padding: 0.3rem 0;
+    z-index: 999;
   }
-  .bottom-nav button {
+  .bottom-nav .nav-btn {
     background: none;
     border: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-size: 0.75rem;
-    color: #002f5f;
+    color: #adc4d6;
+    padding: 0.2rem;
+    width: 20%;
+    position: relative;
   }
-  .bottom-nav img {
+  .bottom-nav .nav-btn img {
     width: 24px;
     height: 24px;
     margin-bottom: 0.2rem;
+    filter: grayscale(100%) brightness(1.6);
   }
-  .nav-toggle {
-    position: fixed;
-    bottom: 0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #002f5f;
-    color: white;
-    border: none;
-    padding: 0.3rem 0.6rem;
-    border-radius: 12px;
-    z-index: 1001;
-    font-size: 1.5rem;
+  .bottom-nav .nav-btn.active {
+    color: #002f5f;
+  }
+  .bottom-nav .nav-btn.active img {
+    filter: none;
+  }
+  .bottom-nav .nav-btn .underline {
+    width: 100%;
+    height: 4px;
+    background-color: transparent;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+  }
+  .bottom-nav .nav-btn.active .underline {
+    background-color: #002f5f;
   }
 
 df-messenger {
