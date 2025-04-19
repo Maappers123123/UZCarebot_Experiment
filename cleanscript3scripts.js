@@ -357,13 +357,5 @@ window.addEventListener('df-messenger-loaded', () => {
     } else if (id === 'options-screen') {
       setActiveNav(document.getElementById('nav-keuzescherm'));
     }
-
-    if (id === 'video-screen' || id === 'game-screen' || id === 'tetris-screen') {
-      nav.classList.add('hidden');
-      if (toggle) toggle.classList.remove('hidden');
-    } else {
-      nav.classList.remove('hidden');
-      if (toggle) toggle.classList.add('hidden');
-    }
   }
 
