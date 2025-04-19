@@ -172,7 +172,7 @@ overflow: visible;
       justify-content: space-between;
       align-items: center;
       background-color: white;
-      padding: 1rem;
+      padding: 0.5rem;
       border-radius: 12px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       margin-bottom: 1rem;
@@ -182,60 +182,13 @@ overflow: visible;
       height: 70px;
     }
 
-.menu-toggle {
-  background: none;
-  border: none;
-  padding: 0;
-  margin-right: 8px; /* afstand van de rechterrand */
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 24px;
-  width: 32px;
-}
-
-.menu-toggle span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background-color: #002f5f;
-  border-radius: 2px;
-}
-
-    .dropdown {
-      background-color: #e0f0ff;
-      border-radius: 12px;
-      padding: 1rem;
-      width: 100%;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .dropdown a {
-      display: block;
-      text-decoration: none;
-      color: #002f5f;
-      padding: 0.75rem;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-      background-color: #fff;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-
-    .dropdown a:hover {
-      background-color: #d6eaff;
-    }
-
     .hidden {
       display: none;
     }
 
 
 .intro,
-.info-screen,
 .chatbot-screen,
-.options,
 .chatbot-intro-screen,
 .game-screen {
   max-width: 451px; /* zelfde als container */
@@ -253,6 +206,11 @@ min-width: 450px
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* of center, afhankelijk van layout */
+}
+
+.options {
+  background-color: transparent !important;
+  box-shadow: none;
 }
 
 .chatbot-intro-screen {
@@ -424,18 +382,6 @@ left: -8%;
     width: 100%;
     border-radius: 16px;
     margin-top: 1rem;
-  }
-
-  .options h2 {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #1b365d;
-    position: relative;
-  }
-
-  .options h2::after {
-    background-color: #eaf5fc;
-    height: 6px;
   }
 
 .tile-grid {
