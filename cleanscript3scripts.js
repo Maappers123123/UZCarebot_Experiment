@@ -46,7 +46,7 @@ function goBackToIntro() {
     }
 
 function showVideoScreen() {
-  showOnlySection('video-screen');
+  showOnlySection('film-screen');
 }
 
 
