@@ -438,7 +438,7 @@ background-color: #002f5f;
       color: white
     }
 
-.chatbot-screen button, .game-screen button, .video-screen button {
+.chatbot-screen button, .game-screen button, .meditatie-screen button, .video-screen button {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
       margin: 0.5rem;
@@ -453,6 +453,7 @@ background-color: #002f5f;
 .intro-buttons button,
 .back-btn button,
 .game-screen button,
+.meditatie-screen button,
 .chatbot-intro-screen button {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
