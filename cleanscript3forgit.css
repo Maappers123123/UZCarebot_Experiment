@@ -16,6 +16,22 @@ body {
       padding: 0;
     }
 
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+h1, h2, h3 {
+  color: #002f5f;
+}
+
+.back-btn {
+  position: relative;
+  z-index: 3;
+}
+
+
 main > section {
   max-width: 100%;
   margin: auto;
