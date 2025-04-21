@@ -245,6 +245,10 @@ min-width: 450px
   background-color: transparent !important;
   box-shadow: none;
 }
+.game-screen {
+  background-color: transparent !important;
+  box-shadow: none;
+}
 
 .chatbot-intro-screen {
   padding-bottom: 140px; /* verhoog naar wens */
