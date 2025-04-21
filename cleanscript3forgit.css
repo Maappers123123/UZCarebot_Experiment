@@ -62,7 +62,7 @@ main > section {
 .film-avatar-bg {
   position: absolute;
   bottom: 0;
-  left: -30px; /* Links i.p.v. rechts */
+  right: -35px; /* Links i.p.v. rechts */
   max-height: 60%;
   z-index: 0;
   opacity: 0.9;
