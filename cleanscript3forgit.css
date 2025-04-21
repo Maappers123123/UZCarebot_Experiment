@@ -59,6 +59,15 @@ main > section {
   opacity: 0.9;
 }
 
+.film-avatar-bg {
+  position: absolute;
+  bottom: 0;
+  right: +30px; /* schuif iets naar rechts */
+  max-height: 75%;
+  z-index: 0;
+  opacity: 0.9;
+}
+
 .meditatie-card {
   background-color: rgba(234, 246, 255, 0.85); /* 85% zichtbaar */
   padding: 1.5rem;
