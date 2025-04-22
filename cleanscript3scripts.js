@@ -60,18 +60,21 @@ let puzzles = [
 ];
 
 let timerInterval;
-let totalSeconds = 600; // 10 minutes
+let totalSeconds = 600;
+let timerPaused = false;
 
 function startTimer() {
   updateTimerDisplay();
   timerInterval = setInterval(() => {
-    if (totalSeconds <= 0) {
-      clearInterval(timerInterval);
-      alert("⏰ Tijd is op! Probeer de puzzel opnieuw of ga naar de volgende.");
-      return;
+    if (!timerPaused) {
+      if (totalSeconds <= 0) {
+        clearInterval(timerInterval);
+        alert("⏰ Tijd is op! Probeer de puzzel opnieuw of ga naar de volgende.");
+        return;
+      }
+      totalSeconds--;
+      updateTimerDisplay();
     }
-    totalSeconds--;
-    updateTimerDisplay();
   }, 1000);
 }
 
@@ -81,6 +84,21 @@ function updateTimerDisplay() {
   document.getElementById('sudoku-timer').textContent = `${minutes}:${seconds}`;
 }
 
+function togglePause() {
+  timerPaused = !timerPaused;
+  const btnLabel = document.getElementById("pause-label");
+  const cells = document.querySelectorAll('.sudoku-cell');
+
+  if (timerPaused) {
+    cells.forEach(cell => cell.disabled = true);
+    btnLabel.textContent = "HERVAT";
+  } else {
+    cells.forEach(cell => {
+      if (!cell.classList.contains('prefilled')) cell.disabled = false;
+    });
+    btnLabel.textContent = "PAUZE";
+  }
+}
 function renderSudokuBoard(board) {
   const container = document.getElementById("sudoku-board");
   container.innerHTML = '';
@@ -188,7 +206,7 @@ function resumeSudoku() {
 }
 
 function showExplanation() {
-  alert("ℹ️ Sudoku is een puzzel waarbij je de cijfers 1 t/m 9 moet invullen in elke rij, kolom en 3x3 vak zonder herhaling.");
+  setTimeout(() => alert("ℹ️ Sudoku is een puzzel waarbij je de cijfers 1 t/m 9 moet invullen in elke rij, kolom en 3x3 vak zonder herhaling."), 10);
 }
 
 function nextPuzzle() {
