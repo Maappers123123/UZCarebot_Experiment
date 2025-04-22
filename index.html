@@ -112,18 +112,19 @@
 
 <section class="game-screen hidden" id="sudoku-screen">
   <div class="container">
-    <div class="sudoku-header">
-      <h2><span class="underline-title">SUDOKU PUZZLE: <span id="puzzle-number">1</span></span></h2>
+    <img src="uz-leuven-logo.png" alt="UZ Leuven Logo" class="logo" />
+    <div class="info-btn-wrapper">
       <button class="info-btn" onclick="showExplanation()">
         <img src="uitleg.svg" alt="Uitleg" width="24" height="24" /><br>
         <span>UITLEG</span>
       </button>
     </div>
+    <h2 class="sudoku-title"><span class="underline-title">SUDOKU PUZZLE: <span id="puzzle-number">1</span></span></h2>
     <p id="sudoku-timer" class="sudoku-timer">timer: <span id="time">10:00</span></p>
 
     <div class="sudoku-board" id="sudoku-board"></div>
 
-    <div class="sudoku-controls">
+    <div class="sudoku-controls single-line">
       <button class="sudoku-btn" onclick="giveHint()">
         <img src="lightbulb.svg" alt="Hint" width="24" height="24" />
         <div>OPLOSSING</div>
@@ -141,7 +142,7 @@
     <button onclick="goBack()" class="back-btn">&lt; Terug</button>
   </div>
 </section>
-
+    
 <!-- Meditatie Scherm -->
 <section class="meditatie-screen hidden" id="meditatie-screen">
    <div class="meditatie-container">
