@@ -115,13 +115,15 @@
   <div class="container">
     <img src="uz-leuven-logo.png" alt="UZ Leuven Logo" class="logo" />
     <h2><span class="underline-title">SUDOKU PUZZLE: <span id="puzzle-number">1</span></span></h2>
+    <p id="sudoku-timer" style="text-align:center; font-weight: bold; font-size: 1.2rem; color: #27BEFF;">10:00</p>
 
     <div class="sudoku-board" id="sudoku-board"></div>
 
     <div class="sudoku-controls">
-      <button onclick="giveHint()">HINT</button>
-      <button onclick="pauseSudoku()">PAUZE</button>
-      <button onclick="showExplanation()">UITLEG</button>
+      <button class="sudoku-btn" onclick="giveHint()">HINT</button>
+      <button class="sudoku-btn" id="pause-btn" onclick="pauseSudoku()">PAUZE</button>
+      <button class="sudoku-btn" onclick="showExplanation()">UITLEG</button>
+      <button class="sudoku-btn" onclick="nextPuzzle()">VOLGENDE PUZZLE</button>
     </div>
 
     <button onclick="goBack()" class="back-btn">&lt; Terug</button>
