@@ -47,17 +47,39 @@ setTimeout(() => {
 let currentPuzzleIndex = 0;
 let puzzles = [
   [
-    [4, '', '', '', 9, '', '', '', 4],
-    ['', '', '', '', '', '', '', '', ''],
-    ['', '', 4, '', '', '', '', 4, ''],
-    ['', 4, '', '', '', '', '', '', ''],
-    ['', '', '', '', 4, '', '', '', ''],
-    ['', '', '', '', '', '', 4, '', ''],
-    [9, '', '', 9, '', 4, '', '', ''],
-    ['', 4, '', 9, '', '', '', '', ''],
-    ['', '', '', '', 4, '', 9, '', '']
+    [5, 3, '', '', 7, '', '', '', ''],
+    [6, '', '', 1, 9, 5, '', '', ''],
+    ['', 9, 8, '', '', '', '', 6, ''],
+    [8, '', '', '', 6, '', '', '', 3],
+    [4, '', '', 8, '', 3, '', '', 1],
+    [7, '', '', '', 2, '', '', '', 6],
+    ['', 6, '', '', '', '', 2, 8, ''],
+    ['', '', '', 4, 1, 9, '', '', 5],
+    ['', '', '', '', 8, '', '', 7, 9]
   ]
 ];
+
+let timerInterval;
+let totalSeconds = 600; // 10 minutes
+
+function startTimer() {
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    if (totalSeconds <= 0) {
+      clearInterval(timerInterval);
+      alert("⏰ Tijd is op! Probeer de puzzel opnieuw of ga naar de volgende.");
+      return;
+    }
+    totalSeconds--;
+    updateTimerDisplay();
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+  const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+  document.getElementById('sudoku-timer').textContent = `${minutes}:${seconds}`;
+}
 
 function renderSudokuBoard(board) {
   const container = document.getElementById("sudoku-board");
@@ -100,8 +122,12 @@ function validateSudoku() {
   });
 
   if (correct && isSudokuComplete(grid)) {
-    alert("Goed gedaan! Volgende puzzel komt eraan.");
-    nextPuzzle();
+    if (isValidSudoku(grid)) {
+      alert("Goed gedaan! Volgende puzzel komt eraan.");
+      nextPuzzle();
+    } else {
+      alert("Oeps! Er zit nog een fout in je oplossing.");
+    }
   }
 }
 
@@ -109,13 +135,44 @@ function isSudokuComplete(grid) {
   return grid.every(row => row.every(cell => cell !== ''));
 }
 
+function isValidSudoku(grid) {
+  for (let i = 0; i < 9; i++) {
+    if (!isValidGroup(grid[i])) return false;
+    const col = grid.map(row => row[i]);
+    if (!isValidGroup(col)) return false;
+  }
+  for (let r = 0; r < 9; r += 3) {
+    for (let c = 0; c < 9; c += 3) {
+      const block = [];
+      for (let dr = 0; dr < 3; dr++) {
+        for (let dc = 0; dc < 3; dc++) {
+          block.push(grid[r + dr][c + dc]);
+        }
+      }
+      if (!isValidGroup(block)) return false;
+    }
+  }
+  return true;
+}
+
+function isValidGroup(group) {
+  const seen = new Set();
+  for (let val of group) {
+    if (val === '') return false;
+    if (seen.has(val)) return false;
+    seen.add(val);
+  }
+  return true;
+}
+
 function giveHint() {
-  alert("Tip: Elke rij, kolom en 3x3 vak moet de cijfers 1-9 bevatten zonder herhaling.");
+  alert("👉 Tip: Elke rij, kolom en 3x3 vak moet de cijfers 1-9 bevatten zonder herhaling.");
 }
 
 function pauseSudoku() {
   document.querySelectorAll('.sudoku-cell').forEach(cell => cell.disabled = true);
-  const btn = document.querySelector('.sudoku-controls button:nth-child(2)');
+  clearInterval(timerInterval);
+  const btn = document.getElementById('pause-btn');
   btn.textContent = 'HERVAT';
   btn.onclick = resumeSudoku;
 }
@@ -124,23 +181,29 @@ function resumeSudoku() {
   document.querySelectorAll('.sudoku-cell').forEach(cell => {
     if (!cell.classList.contains('prefilled')) cell.disabled = false;
   });
-  const btn = document.querySelector('.sudoku-controls button:nth-child(2)');
+  startTimer();
+  const btn = document.getElementById('pause-btn');
   btn.textContent = 'PAUZE';
   btn.onclick = pauseSudoku;
 }
 
 function showExplanation() {
-  alert("Sudoku is een puzzel waarbij je cijfers 1 t/m 9 moet invullen in elke rij, kolom en 3x3 vak zonder herhaling.");
+  alert("ℹ️ Sudoku is een puzzel waarbij je de cijfers 1 t/m 9 moet invullen in elke rij, kolom en 3x3 vak zonder herhaling.");
 }
 
 function nextPuzzle() {
   currentPuzzleIndex = (currentPuzzleIndex + 1) % puzzles.length;
   document.getElementById("puzzle-number").textContent = currentPuzzleIndex + 1;
+  totalSeconds = 600;
   renderSudokuBoard(puzzles[currentPuzzleIndex]);
+  clearInterval(timerInterval);
+  startTimer();
 }
 
 function startSudoku() {
   renderSudokuBoard(puzzles[0]);
+  totalSeconds = 600;
+  startTimer();
 }
 
 startSudoku();
