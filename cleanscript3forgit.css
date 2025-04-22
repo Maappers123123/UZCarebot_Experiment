@@ -38,6 +38,27 @@ main > section {
   padding: 1rem;
 }
 
+.eindscherm .container {
+  text-align: center;
+  padding: 1rem;
+}
+.light-title {
+  color: #27BEFF;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-button {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #1a2d57;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
 .sudoku-board {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
