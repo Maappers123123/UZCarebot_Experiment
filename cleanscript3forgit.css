@@ -59,10 +59,40 @@ main > section {
   text-decoration: none;
 }
 
+.sudoku-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.sudoku-timer {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #27BEFF;
+}
+
+.info-btn {
+  background-color: #27BEFF;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 0.6rem;
+  text-align: center;
+  line-height: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .sudoku-board {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  gap: 2px;
+  gap: 0;
+  border: 2px solid #27BEFF;
   margin: 1rem auto;
   width: 90vw;
   max-width: 360px;
@@ -74,9 +104,19 @@ main > section {
   font-size: 1.2rem;
   text-align: center;
   border: 1px solid #27BEFF;
-  border-radius: 4px;
   box-sizing: border-box;
   background-color: white;
+}
+
+.sudoku-cell:nth-child(3n+1) {
+  border-left: 2px solid #27BEFF;
+}
+.sudoku-cell:nth-child(9n) {
+  border-right: 2px solid #27BEFF;
+}
+.sudoku-cell:nth-child(n+19):nth-child(-n+27),
+.sudoku-cell:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 2px solid #27BEFF;
 }
 
 .prefilled {
@@ -88,7 +128,7 @@ main > section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -96,11 +136,17 @@ main > section {
   background-color: #27BEFF;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
   font-weight: bold;
   font-size: 1rem;
-  min-width: 110px;
+  text-align: center;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
 }
 
 .error {
