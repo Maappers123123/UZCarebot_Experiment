@@ -222,9 +222,11 @@ function nextPuzzle() {
 
 function startSudoku() {
   renderSudokuBoard(puzzles[0]);
+  document.getElementById("puzzle-number").textContent = currentPuzzleIndex + 1;
   totalSeconds = 600;
   startTimer();
 }
+
 
 startSudoku();
     function openRelaxation() {
