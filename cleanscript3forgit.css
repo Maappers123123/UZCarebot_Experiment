@@ -65,6 +65,12 @@ main > section {
   margin: 0 1rem 0.5rem 1rem;
 }
 
+.info-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 1rem 0.5rem 1rem;
+}
+
 .sudoku-title {
   text-align: center;
   margin: 0;
@@ -80,16 +86,14 @@ main > section {
 .info-btn {
   background-color: #27BEFF;
   color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
   border: none;
-  border-radius: 12px;
-  padding: 0.5rem 0.6rem;
-  text-align: center;
-  line-height: 1rem;
+  border-radius: 50%;
+  padding: 0.4rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
 .sudoku-board {
@@ -138,6 +142,10 @@ main > section {
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
+}
+
+.sudoku-btn img {
+  filter: brightness(0) invert(1);
 }
 
 .error {
