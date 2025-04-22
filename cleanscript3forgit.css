@@ -59,11 +59,15 @@ main > section {
   text-decoration: none;
 }
 
-.sudoku-header {
+.info-btn-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
+  justify-content: flex-end;
+  margin: 0 1rem 0.5rem 1rem;
+}
+
+.sudoku-title {
+  text-align: center;
+  margin: 0;
 }
 
 .sudoku-timer {
@@ -107,28 +111,16 @@ main > section {
   background-color: white;
 }
 
-.sudoku-cell:nth-child(3n+1) {
-  border-left: 2px solid #27BEFF;
-}
-.sudoku-cell:nth-child(9n) {
-  border-right: 2px solid #27BEFF;
-}
-.sudoku-cell:nth-child(n+19):nth-child(-n+27),
-.sudoku-cell:nth-child(n+46):nth-child(-n+54) {
-  border-bottom: 2px solid #27BEFF;
-}
-
 .prefilled {
   background-color: #e0f7ff;
   font-weight: bold;
 }
 
-.sudoku-controls {
+.sudoku-controls.single-line {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem auto;
 }
 
 .sudoku-btn {
@@ -151,6 +143,7 @@ main > section {
 .error {
   background-color: #ffd1d1;
 }
+
 
 .options-title {
   text-align: center;
