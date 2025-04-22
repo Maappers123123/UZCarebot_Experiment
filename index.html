@@ -119,10 +119,18 @@
     <div class="sudoku-board" id="sudoku-board"></div>
 
     <div class="sudoku-controls">
-      <button class="sudoku-btn" onclick="giveHint()">HINT</button>
-      <button class="sudoku-btn" id="pause-btn" onclick="pauseSudoku()">PAUZE</button>
-      <button class="sudoku-btn" onclick="showExplanation()">UITLEG</button>
-      <button class="sudoku-btn" onclick="nextPuzzle()">VOLGENDE PUZZLE</button>
+      <button class="sudoku-btn" id="pause-btn" onclick="pauseSudoku()">
+        <div>PAUZE</div>
+        <div style="font-size: 1.5rem; color: white;">⏸</div>
+      </button>
+      <button class="sudoku-btn" onclick="showExplanation()">
+        <div>UITLEG</div>
+        <div style="font-size: 1.5rem; color: white;">❓</div>
+      </button>
+      <button class="sudoku-btn" onclick="nextPuzzle()">
+        <div>VOLGENDE</div>
+        <div style="font-size: 1.5rem; color: white;">🧩</div>
+      </button>
     </div>
 
     <button onclick="goBack()" class="back-btn">&lt; Terug</button>
