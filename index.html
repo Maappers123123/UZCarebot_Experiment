@@ -87,6 +87,22 @@
   </div>
 </section>
 
+<section class="game-screen hidden" id="sudoku-screen">
+  <div class="container">
+    <img src="uz-leuven-logo.png" alt="UZ Leuven Logo" class="logo" />
+    <h2><span class="underline-title">SUDOKU PUZZLE: <span id="puzzle-number">1</span></span></h2>
+
+    <div class="sudoku-board" id="sudoku-board"></div>
+
+    <div class="sudoku-controls">
+      <button onclick="giveHint()">HINT</button>
+      <button onclick="pauseSudoku()">PAUZE</button>
+      <button onclick="showExplanation()">UITLEG</button>
+    </div>
+
+    <button onclick="goBack()" class="back-btn">&lt; Terug</button>
+  </div>
+</section>
 
 
 <!-- Meditatie Scherm -->
@@ -171,8 +187,8 @@
   </div>
       <div class="game-choice-card packman-card">
        <div class="game-overlay">
-        <div class="game-title">PACKMAN</div>
-        <button class="start-btn" onclick="alert('Packman nog niet beschikbaar')">START</button>
+        <div class="game-title">SUDOKU</div>
+<button class="start-btn" onclick="startGame('sudoku-screen')">START</button>
   </div>
 </div>
     <button onclick="goBack()" class="back-btn">&lt; Terug</button>
