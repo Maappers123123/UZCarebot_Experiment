@@ -41,7 +41,7 @@ setTimeout(() => {
   document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
   document.getElementById('eindscherm').classList.remove('hidden');
   document.getElementById('bottom-nav').classList.add('hidden');
-}, 4); // 40 * 60 * 1000 ms
+}, 2400000); // 40 * 60 * 1000 ms
 
 
 let currentPuzzleIndex = 0;
@@ -64,6 +64,7 @@ let totalSeconds = 600;
 let timerPaused = false;
 
 function startTimer() {
+  clearInterval(timerInterval);
   updateTimerDisplay();
   timerInterval = setInterval(() => {
     if (!timerPaused) {
@@ -81,7 +82,7 @@ function startTimer() {
 function updateTimerDisplay() {
   const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
   const seconds = (totalSeconds % 60).toString().padStart(2, '0');
-  document.getElementById('sudoku-timer').textContent = `${minutes}:${seconds}`;
+  document.getElementById('time').textContent = `${minutes}:${seconds}`;
 }
 
 function togglePause() {
@@ -99,6 +100,7 @@ function togglePause() {
     btnLabel.textContent = "PAUZE";
   }
 }
+
 function renderSudokuBoard(board) {
   const container = document.getElementById("sudoku-board");
   container.innerHTML = '';
