@@ -92,7 +92,6 @@ main > section {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   gap: 0;
-  border: 2px solid #27BEFF;
   margin: 1rem auto;
   width: 90vw;
   max-width: 360px;
