@@ -314,8 +314,9 @@ function playerReset() {
     }
 
 function startGame(type) {
+  document.getElementById('game-screen').classList.add('hidden');
+
   if (type === 'tetris') {
-    document.getElementById('game-screen').classList.add('hidden');
     document.getElementById('tetris-screen').classList.remove('hidden');
     arena = createMatrix(12, 20);
     player = { pos: { x: 0, y: 0 }, matrix: null };
@@ -323,10 +324,16 @@ function startGame(type) {
     playerReset();
     paused = false;
     document.getElementById('resume-btn').classList.add('hidden');
-    lastTime = 0; // reset the clock
-    requestAnimationFrame(update); // <- HIER toevoegen
+    lastTime = 0;
+    requestAnimationFrame(update);
+  } else if (type === 'sudoku-screen') {
+    document.getElementById('sudoku-screen').classList.remove('hidden');
+    startSudoku(); // Call the Sudoku initializer
+  } else {
+    alert('Spel niet beschikbaar.');
   }
 }
+
 
 function arenaSweep() {
   let rowCount = 1;
