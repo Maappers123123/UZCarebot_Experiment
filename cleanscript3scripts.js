@@ -36,7 +36,106 @@ function goBackToIntro() {
   showOnlySection('chatbot-intro-screen');
 }
 
+let currentPuzzleIndex = 0;
+let puzzles = [
+  [
+    [4, '', '', '', 9, '', '', '', 4],
+    ['', '', '', '', '', '', '', '', ''],
+    ['', '', 4, '', '', '', '', 4, ''],
+    ['', 4, '', '', '', '', '', '', ''],
+    ['', '', '', '', 4, '', '', '', ''],
+    ['', '', '', '', '', '', 4, '', ''],
+    [9, '', '', 9, '', 4, '', '', ''],
+    ['', 4, '', 9, '', '', '', '', ''],
+    ['', '', '', '', 4, '', 9, '', '']
+  ]
+];
 
+function renderSudokuBoard(board) {
+  const container = document.getElementById("sudoku-board");
+  container.innerHTML = '';
+  for (let r = 0; r < 9; r++) {
+    for (let c = 0; c < 9; c++) {
+      const cell = document.createElement("input");
+      cell.setAttribute("type", "text");
+      cell.setAttribute("maxlength", "1");
+      cell.className = 'sudoku-cell';
+      cell.dataset.row = r;
+      cell.dataset.col = c;
+      if (board[r][c] !== '') {
+        cell.value = board[r][c];
+        cell.disabled = true;
+        cell.classList.add('prefilled');
+      }
+      cell.addEventListener("input", validateSudoku);
+      container.appendChild(cell);
+    }
+  }
+}
+
+function validateSudoku() {
+  let correct = true;
+  const cells = document.querySelectorAll('.sudoku-cell');
+  const grid = Array.from({ length: 9 }, () => Array(9).fill(''));
+
+  cells.forEach(cell => {
+    const r = cell.dataset.row;
+    const c = cell.dataset.col;
+    const val = cell.value;
+    if (val && (isNaN(val) || val < 1 || val > 9)) {
+      cell.classList.add("error");
+      correct = false;
+    } else {
+      cell.classList.remove("error");
+      grid[r][c] = val;
+    }
+  });
+
+  if (correct && isSudokuComplete(grid)) {
+    alert("Goed gedaan! Volgende puzzel komt eraan.");
+    nextPuzzle();
+  }
+}
+
+function isSudokuComplete(grid) {
+  return grid.every(row => row.every(cell => cell !== ''));
+}
+
+function giveHint() {
+  alert("Tip: Elke rij, kolom en 3x3 vak moet de cijfers 1-9 bevatten zonder herhaling.");
+}
+
+function pauseSudoku() {
+  document.querySelectorAll('.sudoku-cell').forEach(cell => cell.disabled = true);
+  const btn = document.querySelector('.sudoku-controls button:nth-child(2)');
+  btn.textContent = 'HERVAT';
+  btn.onclick = resumeSudoku;
+}
+
+function resumeSudoku() {
+  document.querySelectorAll('.sudoku-cell').forEach(cell => {
+    if (!cell.classList.contains('prefilled')) cell.disabled = false;
+  });
+  const btn = document.querySelector('.sudoku-controls button:nth-child(2)');
+  btn.textContent = 'PAUZE';
+  btn.onclick = pauseSudoku;
+}
+
+function showExplanation() {
+  alert("Sudoku is een puzzel waarbij je cijfers 1 t/m 9 moet invullen in elke rij, kolom en 3x3 vak zonder herhaling.");
+}
+
+function nextPuzzle() {
+  currentPuzzleIndex = (currentPuzzleIndex + 1) % puzzles.length;
+  document.getElementById("puzzle-number").textContent = currentPuzzleIndex + 1;
+  renderSudokuBoard(puzzles[currentPuzzleIndex]);
+}
+
+function startSudoku() {
+  renderSudokuBoard(puzzles[0]);
+}
+
+startSudoku();
     function openRelaxation() {
       alert("Ontspanningsopties geopend");
     }
