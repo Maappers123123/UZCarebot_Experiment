@@ -112,31 +112,35 @@
 
 <section class="game-screen hidden" id="sudoku-screen">
   <div class="container">
-    <img src="uz-leuven-logo.png" alt="UZ Leuven Logo" class="logo" />
-    <h2><span class="underline-title">SUDOKU PUZZLE: <span id="puzzle-number">1</span></span></h2>
-    <p id="sudoku-timer" style="text-align:center; font-weight: bold; font-size: 1.2rem; color: #27BEFF;">10:00</p>
+    <div class="sudoku-header">
+      <h2><span class="underline-title">SUDOKU PUZZLE: <span id="puzzle-number">1</span></span></h2>
+      <button class="info-btn" onclick="showExplanation()">
+        <img src="icons/info.svg" alt="Uitleg" width="24" height="24" /><br>
+        <span>UITLEG</span>
+      </button>
+    </div>
+    <p id="sudoku-timer" class="sudoku-timer">timer: <span id="time">10:00</span></p>
 
     <div class="sudoku-board" id="sudoku-board"></div>
 
     <div class="sudoku-controls">
-      <button class="sudoku-btn" id="pause-btn" onclick="pauseSudoku()">
-        <div>PAUZE</div>
-        <div style="font-size: 1.5rem; color: white;">⏸</div>
+      <button class="sudoku-btn" onclick="giveHint()">
+        <img src="lightbulb.svg" alt="Hint" width="24" height="24" />
+        <div>OPLOSSING</div>
       </button>
-      <button class="sudoku-btn" onclick="showExplanation()">
-        <div>UITLEG</div>
-        <div style="font-size: 1.5rem; color: white;">❓</div>
+      <button class="sudoku-btn" id="pause-btn" onclick="togglePause()">
+        <img src="pause.svg" alt="Pauze" width="24" height="24" />
+        <div id="pause-label">PAUZE</div>
       </button>
       <button class="sudoku-btn" onclick="nextPuzzle()">
+        <img src="arrow-right.svg" alt="Volgende" width="24" height="24" />
         <div>VOLGENDE</div>
-        <div style="font-size: 1.5rem; color: white;">🧩</div>
       </button>
     </div>
 
     <button onclick="goBack()" class="back-btn">&lt; Terug</button>
   </div>
 </section>
-
 
 <!-- Meditatie Scherm -->
 <section class="meditatie-screen hidden" id="meditatie-screen">
