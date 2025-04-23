@@ -84,7 +84,7 @@ main > section {
 }
 
 .info-btn {
-  background-color: transparent;
+  background-color: transparent !important;
   color: white;
   border: none;
   border-radius: 50%;
@@ -128,7 +128,7 @@ main > section {
 }
 
 .sudoku-btn {
-  background-color: !important;
+  background-color: #27BEFF !important;
   color: white;
   border: none;
   border-radius: 12px;
