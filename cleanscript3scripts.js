@@ -518,6 +518,7 @@ window.addEventListener('df-messenger-loaded', () => {
     });
   });
 
+
   function showCustomScreen(targetId) {
     hideAllScreens();
     const screen = document.getElementById(targetId);
@@ -557,4 +558,18 @@ window.addEventListener('df-messenger-loaded', () => {
       setActiveNav(document.getElementById('nav-keuzescherm'));
     }
   }
+window.addEventListener('df-messenger-loaded', () => {
+  const iframe = document.querySelector('df-messenger').shadowRoot.querySelector('iframe');
+
+  // Try to send a simulated user message after iframe loads (⚠️ might not always work!)
+  iframe.onload = () => {
+    setTimeout(() => {
+      iframe.contentWindow.postMessage({
+        event: 'df-request-query',
+        query: 'hallo'  // or whatever should trigger your welcome logic
+      }, '*');
+    }, 1000); // delay to let the bot fully load
+  };
+});
+
 
