@@ -329,8 +329,8 @@ df-messenger {
   --df-messenger-font-color: #000000;
   --df-messenger-chat-background-color: #f3faff;
   --df-messenger-send-icon: #27BEFF;
-  width: 100%;
-  max-width: 100%;
+  width: 90%;
+  max-width: 90%;
   height: 100%;
   max-height: 100%;
 }
