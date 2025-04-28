@@ -7,6 +7,16 @@ body {
   font-family: 'Roboto Slab', serif;
 }
 
+@media (max-width: 480px) {
+  .header-btn img {
+    width: 24px;
+    height: 24px;
+  }
+  .header-btn span {
+    font-size: 0.6rem;
+  }
+}
+
 .meditatie-card, .video-card {
   width: 100%;
   max-width: 420px;
