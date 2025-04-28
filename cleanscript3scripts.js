@@ -582,5 +582,21 @@ window.addEventListener('df-messenger-loaded', () => {
   }
 }
 
+  const messenger = document.querySelector('df-messenger');
+
+  messenger.addEventListener('df-chip-clicked', function(event) {
+    const clickedText = event.detail.text || '';
+
+    console.log('Chip clicked:', clickedText);
+
+    if (clickedText.includes('spelletje')) {
+      showGame();
+    } else if (clickedText.includes('video')) {
+      showVideoScreen();
+    } else if (clickedText.includes('Ontspan')) {
+      showMindfulness();
+    }
+  });
+
 
 
