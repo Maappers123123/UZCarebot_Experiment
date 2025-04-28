@@ -572,4 +572,15 @@ window.addEventListener('df-messenger-loaded', () => {
   };
 });
 
+@media (max-width: 480px) {
+  .header-btn img {
+    width: 24px;
+    height: 24px;
+  }
+  .header-btn span {
+    font-size: 0.6rem;
+  }
+}
+
+
 
