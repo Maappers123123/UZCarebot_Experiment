@@ -1,18 +1,4 @@
-    const messenger = document.querySelector('df-messenger');
-
-messenger.addEventListener('df-chip-clicked', function(event) {
-  const clickedText = event.detail.text;
-
-  if (clickedText.includes('spelletje')) {
-    showGame();
-  } else if (clickedText.includes('video')) {
-    showVideoScreen();
-  } else if (clickedText.includes('Ontspan')) {
-    showMindfulness();
-  }
-});
-
-function toggleMenu() {
+    function toggleMenu() {
       const menu = document.getElementById('dropdown-menu');
       menu.classList.toggle('hidden');
     }
