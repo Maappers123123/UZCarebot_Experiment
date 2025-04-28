@@ -25,20 +25,25 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: none;
-  border: none;
-  padding: 0.2rem 0.4rem;
+  background: none !important;
+  border: none !important;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
-  font-family: 'Roboto Slab', serif; /* zelfde als je app */
+  font-family: 'Roboto Slab', serif;
   font-size: 0.8rem;
   color: #002f5f;
+  box-shadow: none;
+  width: 60px;
+  height: 70px;
 }
 
 .header-btn img {
-  width: 32px;
-  height: 32px;
-  margin-bottom: 0.2rem;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 0.3rem;
 }
+
 
 .header-buttons {
   display: flex;
