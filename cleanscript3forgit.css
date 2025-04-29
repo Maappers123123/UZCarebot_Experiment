@@ -326,19 +326,27 @@ main > section {
 df-messenger {
   --df-messenger-bot-message: #e6f3fc;
   --df-messenger-user-message: #ffffff;
-  --df-messenger-font-color: #000000;
+  --df-messenger-font-color: #002f5f;
   --df-messenger-chat-background-color: #f3faff;
   --df-messenger-send-icon: #27BEFF;
-  width: 90%;
-  max-width: 90%;
+  width: 100% !important;
+  max-width: 100% !important;
   height: 100%;
   max-height: 100%;
+  box-sizing: border-box;
 }
 
 df-messenger-chat {
   width: 100%;
   max-width: 100%;
 }
+
+df-messenger-chat {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
 
 .chatbot-wrapper {
   max-width: 450px;
