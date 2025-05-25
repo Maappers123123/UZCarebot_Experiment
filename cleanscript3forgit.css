@@ -549,9 +549,11 @@ min-width: 450px
         height: 340px;
         right: -20px;
       }
-      .intro h2, .intro p {
+     .intro p {
         font-size: 0.95rem;
       }
+    }
+
   .game-choice-card {
     width: 100%;
     max-width: 420px;
@@ -662,6 +664,7 @@ left: -8%;
       border-radius: 8px;
       border: none;
       cursor: pointer;
+            font-weight: bold;
 background-color: #002f5f;
       color: white
     }
