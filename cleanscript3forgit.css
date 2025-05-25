@@ -685,6 +685,10 @@ background-color: #002f5f;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+button, .start-btn, .pause-btn, .sudoku-btn {
+  touch-action: manipulation; /* Disables double-tap zoom */
+}
+
 .options button:hover,
 .intro-buttons button:hover,
 .back-btn button:hover,
