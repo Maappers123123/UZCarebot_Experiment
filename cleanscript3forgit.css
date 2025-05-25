@@ -41,7 +41,8 @@ body {
   margin: 0;
   cursor: pointer;
   font-family: 'Roboto Slab', serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: bold;
   color: #002f5f;
   box-shadow: none;
   width: 60px;
