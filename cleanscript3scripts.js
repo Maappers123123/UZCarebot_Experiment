@@ -41,7 +41,7 @@ setTimeout(() => {
   document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
   document.getElementById('eindscherm').classList.remove('hidden');
   document.getElementById('bottom-nav').classList.add('hidden');
-}, 2400000); // 40 * 60 * 1000 ms
+}, 1); // 40 * 60 * 1000 ms
 
 
 let currentPuzzleIndex = 0;
