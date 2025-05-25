@@ -84,6 +84,7 @@ h1, h2, h3 {
 .back-btn {
   position: relative;
   z-index: 3;
+  font-weight: bold;
 }
 
 
@@ -149,6 +150,7 @@ main > section {
   justify-content: center;
   width: 40px;
   height: 40px;
+  font-weight: bold;
 }
 
 .sudoku-board {
@@ -528,6 +530,7 @@ min-width: 450px
       border-radius: 12px;
       font-size: 1rem;
       cursor: pointer;
+      font-weight: bold;
     }
 
     .avatar {
@@ -670,6 +673,7 @@ background-color: #002f5f;
       border-radius: 8px;
       border: none;
       cursor: pointer;
+      font-weight: bold;
 background-color: #002f5f;
       color: white
     }
@@ -706,6 +710,7 @@ button, .start-btn, .pause-btn, .sudoku-btn {
       border-radius: 8px;
       border: none;
       cursor: pointer;
+        font-weight: bold;
 background-color: #002f5f;
       color: white
     }
@@ -807,6 +812,7 @@ background-color: #002f5f;
   border: none;
   background-color: #002f5f;
   color: white;
+        font-weight: bold;
   border-radius: 12px;
   cursor: pointer;
 }
@@ -819,6 +825,7 @@ background-color: #002f5f;
   padding: 0.6rem 1.2rem;
   border-radius: 12px;
   font-size: 1rem;
+        font-weight: bold;
   display: block;
   margin-left: auto;
   margin-right: auto;
