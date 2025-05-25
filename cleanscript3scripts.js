@@ -449,16 +449,19 @@ function arenaSweep() {
 
 function toggleGamePause() {
   paused = !paused;
-  const btn = document.getElementById('resume-btn');
+  const btn = document.querySelector('.pause-btn');
+  const resumeBtn = document.getElementById('resume-btn');
+
   if (paused) {
     btn.textContent = 'HERVAT';
-    btn.classList.remove('hidden');
+    resumeBtn.classList.remove('hidden'); // optioneel: aparte hervat-knop
   } else {
     btn.textContent = 'PAUZE';
-    btn.classList.remove('hidden'); // of 'hidden' als je de knop wil verbergen na hervatten
-    update();
+    resumeBtn.classList.add('hidden');
+    requestAnimationFrame(update); // <- BELANGRIJK: start animatieloop opnieuw
   }
 }
+
 
 
     document.addEventListener('keydown', event => {
