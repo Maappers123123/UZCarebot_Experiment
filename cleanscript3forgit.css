@@ -9,8 +9,8 @@ body {
 
 @media (max-width: 480px) {
   .header-btn img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
   .header-btn span {
     font-size: 0.6rem;
@@ -46,12 +46,6 @@ body {
   box-shadow: none;
   width: 60px;
   height: 70px;
-}
-
-.header-btn img {
-  width: 28px;
-  height: 28px;
-  margin-bottom: 0.3rem;
 }
 
 
