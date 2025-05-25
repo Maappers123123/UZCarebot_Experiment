@@ -447,16 +447,19 @@ function arenaSweep() {
 }
 
 
-    function pauseGame() {
-      paused = true;
-      document.getElementById('resume-btn').classList.remove('hidden');
-    }
+function toggleGamePause() {
+  paused = !paused;
+  const btn = document.getElementById('resume-btn');
+  if (paused) {
+    btn.textContent = 'HERVAT';
+    btn.classList.remove('hidden');
+  } else {
+    btn.textContent = 'PAUZE';
+    btn.classList.remove('hidden'); // of 'hidden' als je de knop wil verbergen na hervatten
+    update();
+  }
+}
 
-    function resumeGame() {
-      paused = false;
-      document.getElementById('resume-btn').classList.add('hidden');
-      update();
-    }
 
     document.addEventListener('keydown', event => {
       if (paused) return;
